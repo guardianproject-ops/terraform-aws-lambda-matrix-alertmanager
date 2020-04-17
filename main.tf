@@ -74,7 +74,7 @@ resource "aws_iam_role_policy_attachment" "lambda" {
 resource "aws_lambda_function" "default" {
   function_name    = module.label.id
   filename         = "${path.module}/artifacts/lambda.zip"
-  handler          = "index.handler"
+  handler          = "lambda.handler"
   role             = aws_iam_role.lambda.arn
   source_code_hash = data.archive_file.lambda_zip.output_base64sha256
   runtime          = "nodejs12.x"
