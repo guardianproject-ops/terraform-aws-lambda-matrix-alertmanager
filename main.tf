@@ -78,6 +78,7 @@ resource "aws_lambda_function" "default" {
   role             = aws_iam_role.lambda.arn
   source_code_hash = data.archive_file.lambda_zip.output_base64sha256
   runtime          = "nodejs12.x"
+  timeout          = 10
   tags             = module.label.tags
 
   environment {

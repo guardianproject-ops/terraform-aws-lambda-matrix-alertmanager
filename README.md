@@ -114,9 +114,9 @@ module "matrix_alertmanager" {
 |------|-------------|------|---------|:-----:|
 | attributes | Additional attributes (e.g., `one', or `two') | `list` | `[]` | no |
 | delimiter | Delimiter to be used between `namespace`, `stage`, `name`, and `attributes` | `string` | `"-"` | no |
-| matrix\_alertmanager\_homeserver\_url | your homeserver url, example: https://matrix.org | `string` | n/a | yes |
+| matrix\_alertmanager\_homeserver\_url | your homeserver url, example: https://matrix-client.matrix.org | `string` | n/a | yes |
 | matrix\_alertmanager\_rooms | A list of rooms in the format  <room name>/!XXROOMID:matrix.org. | `list` | n/a | yes |
-| matrix\_alertmanager\_shared\_secret | a shared secret used by alertmanager and this lambda | `string` | n/a | yes |
+| matrix\_alertmanager\_shared\_secret | a shared secret used by alertmanager and this lambda, it must be URL safe. | `string` | n/a | yes |
 | matrix\_alertmanager\_user\_id | The matrix id of your matrix bot user, example: @myfoobot:matrix.org | `string` | n/a | yes |
 | matrix\_alertmanager\_user\_token | The api token for your matrix bot user | `string` | n/a | yes |
 | name | Name  (e.g. `app` or `database`) | `string` | n/a | yes |
@@ -128,8 +128,8 @@ module "matrix_alertmanager" {
 
 | Name | Description |
 |------|-------------|
-| lambda | n/a |
-| lambda\_url | n/a |
+| lambda | the lambda resource output |
+| lambda\_url | the publicly accessible url which exposes matrix-alertmanager |
 
 
 

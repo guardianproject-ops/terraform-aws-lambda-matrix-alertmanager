@@ -4,7 +4,7 @@ variable "matrix_alertmanager_shared_secret" {
 }
 variable "matrix_alertmanager_homeserver_url" {
   type        = string
-  description = "your homeserver url, example: https://matrix.org"
+  description = "your homeserver url, example: https://matrix-client.matrix.org"
 }
 variable "matrix_alertmanager_rooms" {
   type        = list
