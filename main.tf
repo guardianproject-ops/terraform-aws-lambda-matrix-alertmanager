@@ -151,7 +151,7 @@ resource "aws_api_gateway_deployment" "default" {
   ]
 
   rest_api_id = aws_api_gateway_rest_api.default.id
-  stage_name  = "test"
+  stage_name  = "matrix-alertmanager"
 }
 
 resource "aws_lambda_permission" "apigw" {
