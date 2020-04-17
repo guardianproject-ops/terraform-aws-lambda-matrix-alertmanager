@@ -1,6 +1,6 @@
 variable "matrix_alertmanager_shared_secret" {
   type        = string
-  description = "a shared secret used by alertmanager and this lambda"
+  description = "a shared secret used by alertmanager and this lambda, it must be URL safe."
 }
 variable "matrix_alertmanager_homeserver_url" {
   type        = string
