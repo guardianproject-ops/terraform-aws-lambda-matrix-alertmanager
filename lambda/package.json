@@ -1,0 +1,14 @@
+{
+  "name": "lambda",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lambda.js",
+  "dependencies": {
+    "aws-serverless-express": "^3.3.8",
+    "matrix-alertmanager": "jaywink/matrix-alertmanager#v0.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {},
+  "author": "",
+  "license": "AGPLv3-or-later"
+}

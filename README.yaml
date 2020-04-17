@@ -1,0 +1,55 @@
+---
+#
+# This is the canonical configuration for the `README.md`
+# Run `make readme` to rebuild the `README.md`
+#
+
+# Name of this project
+name: terraform-aws-lambda-matrix-alertmanager
+
+# License of this project
+license: "AGPL3"
+
+# Canonical GitLab repo
+gitlab_repo: guardianproject-ops/terraform-aws-lambda-matrix-alertmanager
+
+# Badges to display
+badges: []
+
+# Short description of this project
+description: |-
+  This is a terraform module that creates a lambda function running [matrix-alertmanager](https://github.com/jaywink/matrix-alertmanager/)
+
+introduction: |-
+  Use this module to setup a Lambda function that will receive alertmanager API calls and forward them to Matrix rooms.
+
+# How to use this project
+usage: |-
+
+  ```hcl
+  module "matrix_alertmanager" {
+    source          = "git::https://gitlab.com/guardianproject-ops/terraform-aws-lambda-matrix-alertmanager.git?ref=tags/0.1.0"
+
+    namespace       = var.namespace
+    name            = var.name
+    stage           = var.stage
+    delimiter       = var.delimiter
+    attributes      = ["matrix-alertmanager"]
+    tags            = var.tags
+
+    matrix_alertmanager_shared_secret  = "changeme"
+    matrix_alertmanager_homeserver_url = "https://matrix.org"
+    matrix_alertmanager_rooms          = ["oneroom/!XXXXXX:matrix.org", "secondroom/!XXXXXX:matrix.org"]
+    matrix_alertmanager_user_token     = "XXXX"
+    matrix_alertmanager_user_id        = "@mybot:matrix.org"
+  }
+  ```
+
+include:
+  - "docs/terraform.md"
+
+# Contributors to this project
+contributors:
+  - name: "Abel Luck"
+    gitlab: "abelxluck"
+    gravatar: 0f605397e0ead93a68e1be26dc26481a
