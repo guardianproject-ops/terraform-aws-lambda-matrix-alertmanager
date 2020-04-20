@@ -5,7 +5,7 @@
   "main": "lambda.js",
   "dependencies": {
     "aws-serverless-express": "^3.3.8",
-    "matrix-alertmanager": "jaywink/matrix-alertmanager#v0.2.0"
+    "matrix-alertmanager": "abeluck/matrix-alertmanager#master"
   },
   "devDependencies": {},
   "scripts": {},
