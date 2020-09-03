@@ -3,7 +3,7 @@
 | Name | Version |
 |------|---------|
 | archive | ~> 1.3.0 |
-| aws | ~> 2.0 |
+| aws | ~> 3.0 |
 
 ## Inputs
 
