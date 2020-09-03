@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.1](https://gitlab.com/guardianproject-ops/terraform-aws-lambda-matrix-alertmanager/compare/2.0.0...2.0.1) (2020-09-03)
+
+
+### Bug Fixes
+
+* relax aws provider version requirement ([a85f884](https://gitlab.com/guardianproject-ops/terraform-aws-lambda-matrix-alertmanager/commit/a85f884cf78df05a8c94413f22a645017f7257a5))
+
 ## 2.0.0 (2020-09-03)
 
 
