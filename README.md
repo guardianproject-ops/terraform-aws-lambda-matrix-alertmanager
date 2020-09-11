@@ -63,6 +63,7 @@ It's free and open source made available under the the [GNU Affero General Publi
 
 
 
+
 ## Introduction
 
 Use this module to setup a Lambda function that will receive alertmanager API calls and forward them to Matrix rooms.
@@ -73,13 +74,13 @@ Use this module to setup a Lambda function that will receive alertmanager API ca
 
 
 **IMPORTANT:** The `master` branch is used in `source` just as an example. In your code, do not pin to `master` because there may be breaking changes between releases.
-Instead pin to the release tag (e.g. `?ref=tags/x.y.z`) of one of our [latest releases](https://gitlab.com/guardianproject-ops/terraform-aws-lambda-matrix-alertmanager/releases).
+Instead pin to the release tag (e.g. `?ref=tags/x.y.z`) of one of our [latest releases](https://gitlab.com/guardianproject-ops/terraform-aws-lambda-matrix-alertmanager/-/tags).
 
 
 
 ```hcl
 module "matrix_alertmanager" {
-  source          = "git::https://gitlab.com/guardianproject-ops/terraform-aws-lambda-matrix-alertmanager.git?ref=tags/0.1.0"
+  source          = "git::https://gitlab.com/guardianproject-ops/terraform-aws-lambda-matrix-alertmanager.git?ref=master"
 
   namespace       = var.namespace
   name            = var.name

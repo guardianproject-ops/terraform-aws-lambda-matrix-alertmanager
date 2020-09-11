@@ -28,7 +28,7 @@ usage: |-
 
   ```hcl
   module "matrix_alertmanager" {
-    source          = "git::https://gitlab.com/guardianproject-ops/terraform-aws-lambda-matrix-alertmanager.git?ref=tags/0.1.0"
+    source          = "git::https://gitlab.com/guardianproject-ops/terraform-aws-lambda-matrix-alertmanager.git?ref=master"
 
     namespace       = var.namespace
     name            = var.name
