@@ -1,15 +1,5 @@
 data "aws_caller_identity" "current" {}
 
-module "label" {
-  source     = "git::https://github.com/cloudposse/terraform-null-label.git?ref=tags/0.19.2"
-  namespace  = var.namespace
-  stage      = var.stage
-  name       = var.name
-  delimiter  = var.delimiter
-  attributes = var.attributes
-  tags       = var.tags
-}
-
 data "archive_file" "lambda_zip" {
   type        = "zip"
   source_dir  = "${path.module}/lambda"
@@ -32,9 +22,9 @@ data "aws_iam_policy_document" "assume" {
 }
 
 resource "aws_iam_role" "lambda" {
-  name               = module.label.id
+  name               = module.this.id
   assume_role_policy = data.aws_iam_policy_document.assume.json
-  tags               = module.label.tags
+  tags               = module.this.tags
 }
 
 
@@ -53,7 +43,7 @@ data "aws_iam_policy_document" "lambda" {
 }
 
 resource "aws_iam_policy" "lambda" {
-  name        = module.label.id
+  name        = module.this.id
   description = "Allow put logs"
   policy      = data.aws_iam_policy_document.lambda.json
 }
@@ -64,14 +54,14 @@ resource "aws_iam_role_policy_attachment" "lambda" {
 }
 
 resource "aws_lambda_function" "default" {
-  function_name    = module.label.id
+  function_name    = module.this.id
   filename         = "${path.module}/artifacts/lambda.zip"
   handler          = "lambda.handler"
   role             = aws_iam_role.lambda.arn
   source_code_hash = data.archive_file.lambda_zip.output_base64sha256
   runtime          = "nodejs12.x"
   timeout          = 10
-  tags             = module.label.tags
+  tags             = module.this.tags
 
   environment {
     variables = {
@@ -93,8 +83,8 @@ resource "aws_lambda_alias" "default" {
 }
 
 resource "aws_api_gateway_rest_api" "default" {
-  name = module.label.name
-  tags = module.label.tags
+  name = module.this.name
+  tags = module.this.tags
 }
 
 resource "aws_api_gateway_resource" "proxy" {

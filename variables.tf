@@ -18,35 +18,3 @@ variable "matrix_alertmanager_user_id" {
   type        = string
   description = "The matrix id of your matrix bot user, example: @myfoobot:matrix.org"
 }
-
-variable "delimiter" {
-  type        = string
-  default     = "-"
-  description = "Delimiter to be used between `namespace`, `stage`, `name`, and `attributes`"
-}
-
-variable "namespace" {
-  type        = string
-  description = "Namespace, your org"
-}
-
-variable "stage" {
-  type        = string
-  description = "Environment (e.g. dev, prod, test)"
-}
-
-variable "name" {
-  type        = string
-  description = "Name  (e.g. `app` or `database`)"
-}
-variable "attributes" {
-  type        = list
-  default     = []
-  description = "Additional attributes (e.g., `one', or `two')"
-}
-
-variable "tags" {
-  type        = map
-  default     = {}
-  description = "Additional tags (e.g. map(`Visibility`,`Public`)"
-}
